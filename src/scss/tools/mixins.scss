@@ -1,0 +1,187 @@
+// list reset
+@mixin listreset {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// transition
+@mixin transition {
+	transition: all 0.3s ease-in-out;
+}
+
+
+@mixin bgCover {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+@mixin absoluteCover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+@mixin centeredAbsolute {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+@mixin alignVerticalAbsolute {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+@mixin alignHorizontalAbsolute {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+}
+
+@mixin fillBlockAbsolute {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+@mixin fillBlockFixed {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+@mixin aspectRatioImage {
+	display: block;
+	position: relative;
+	padding-top: 75.18%;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+}
+
+@mixin aspectRatioImageWide {
+	display: block;
+	position: relative;
+	padding-top: 56.25%;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+}
+
+@mixin aspectRatioImageSquare {
+	display: block;
+	position: relative;
+	padding-top: 100%;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+}
+
+@mixin aspectRatioHightImage {
+	display: block;
+	position: relative;
+	padding-top: 125%;
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+}
+
+@mixin coverImage {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	font-family: 'object-fit: cover;';
+}
+
+@mixin containImage {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	font-family: 'object-fit: contain';
+}
+
+//font-face
+@mixin font-face($font-name, $font-path, $weight, $style) {
+	@font-face {
+		font-family: '#{$font-name}';
+		src: url('../fonts/#{$font-path}.woff2') format('woff2'),
+					url('../fonts/#{$font-path}.woff') format('woff');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}
+
+/// Animate css properties
+// usage 
+// scss - @include animate(color);
+//     or @include animate(color width);
+//     or @include animate(color width, 1s, linear);
+//
+$animation-speed: 0.3s !default;
+
+@mixin animate($properties, $duration: $animation-speed, $easing: ease-in-out) {
+  $list: ();
+  @each $prop in $properties {
+    $str: #{$prop} #{$duration} #{$easing};
+    $list: join($list, #{$str}, comma);
+  }
+  transition: $list;
+}
+
+
+/// Mixin for styling form-placeholders
+/// @example scss - Usage
+///   @include placeholder {
+///    color: #333;
+///   }
+///
+///   input[type='text'],
+///   input[type='tel'],
+///   input[type='email'] {
+///     @include placeholder {
+///      color: red;
+///     }
+///   }
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    opacity: 1;
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &.placeholder {
+    @content;
+  }
+}

@@ -1,0 +1,9 @@
+$white: #ffffff;
+$black: #000000;
+$blue: #0000FF;
+
+:root {
+  --bg-page: #{$white};
+  --text-color: #{$black};
+  --link-color: #{$blue};
+}

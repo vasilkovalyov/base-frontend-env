@@ -1,0 +1,106 @@
+@use './setup.scss';
+@use '../tools/mixins.scss';
+@use '../tools/responsive.scss';
+@use '../settings/font-sizes.scss' as fz;
+@use '../settings/spacing.scss';
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.h {
+  font-family: setup.$base-font-heading;
+  line-height: setup.$heading-line-height;
+  color: setup.$heading-color;
+  font-weight: setup.$heading-font-weight;
+  margin: 0 0 spacing.$s;
+  
+  @include responsive.mq($from: tablet_large) {
+    margin: 0 0 spacing.$m;
+  }
+  
+  a {
+    color: inherit;
+  }
+}
+
+h1 {
+  font-size: fz.$h1-mobile;
+
+  @include responsive.mq($from: tablet_large) {
+    font-size: fz.$h1-medium
+  }
+}
+
+h2 {
+  font-size: fz.$h2-mobile;
+
+  @include responsive.mq($from: tablet_large) {
+    font-size: fz.$h2-medium
+  }
+}
+
+h3 {
+  font-size: fz.$h3-mobile;
+
+  @include responsive.mq($from: tablet_large) {
+    font-size: fz.$h3-medium
+  }
+}
+
+h4 {
+  font-size: fz.$h4-mobile;
+
+  @include responsive.mq($from: tablet_large) {
+    font-size: fz.$h4-medium
+  }
+}
+
+h5 {
+  font-size: fz.$h5-mobile;
+
+  @include responsive.mq($from: tablet_large) {
+    font-size: fz.$h5-medium
+  }
+}
+
+h6 {
+  font-size: fz.$h6-mobile;
+
+  @include responsive.mq($from: tablet_large) {
+    font-size: fz.$h6-medium
+  }
+}
+
+p {
+  line-height: setup.$line-height-base;
+  margin: 0 0 spacing.$s;
+  
+  @include responsive.mq($from: tablet_large) {
+    margin: 0 0 spacing.$m;
+  }
+}
+
+a {
+	color: setup.$base-link-color;
+	text-decoration: none;
+	
+	@include mixins.animate(color background-color);
+
+	&:hover,
+  &:focus {
+		color: setup.$base-link-hover-color;
+	}
+}
+
+a[href*="mailto:"] {
+  word-wrap: break-word;
+}

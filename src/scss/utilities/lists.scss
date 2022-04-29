@@ -1,0 +1,5 @@
+@use '../tools/mixins';
+
+.list-reset {
+	@include mixins.listreset;
+}

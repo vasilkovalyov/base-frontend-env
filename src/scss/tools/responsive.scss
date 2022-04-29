@@ -1,0 +1,20 @@
+$mq-breakpoints: (
+  mobile: 375px,
+  mobile_md: 576px,
+  tablet: 768px,
+  tablet_large: 1024px,
+  wide: 1200px,
+  laptop: 1366px,
+  laptop-md: 1440px,
+);
+
+@import '~sass-mq';
+
+// EXAMPLES
+
+// @include mq($from: mobile, $until: tablet)
+
+// @include mq($until: tablet, $and: '(orientation: landscape)')
+
+// Apply styling to tablets up to desktop (exclude desktop)
+// @include mq(tablet, desktop)

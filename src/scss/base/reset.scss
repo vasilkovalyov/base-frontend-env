@@ -1,0 +1,61 @@
+@use './setup.scss';
+
+html {
+	box-sizing: border-box;
+}
+  
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+* {
+	max-height: 1000000px;
+}
+
+//- HTML5 display-role reset for older browsers
+main,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+html,
+body {
+	color: setup.$base-text-color;
+	background: setup.$base-background-color;
+	font: #{setup.$font-size-base}/#{setup.$line-height-base} setup.$base-font-family;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: none;
+	-moz-osx-font-smoothing: grayscale;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+// adaptive images
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+iframe {
+	width: 100%;
+}
+
+.stop-transitions {
+	* {
+		transition: none !important;
+	}
+}

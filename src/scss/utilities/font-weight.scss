@@ -1,0 +1,21 @@
+@use '../settings/font-weights';
+
+.font-bold {
+	font-weight: font-weights.$bold;
+}
+
+.font-semibold {
+	font-weight: font-weights.$semibold;
+}
+
+.font-medium {
+	font-weight: font-weights.$medium;
+}
+
+.font-normal {
+	font-weight: font-weights.$normal;
+}
+
+.font-light {
+	font-weight: font-weights.$light;
+}

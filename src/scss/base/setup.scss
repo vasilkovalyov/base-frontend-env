@@ -1,0 +1,26 @@
+@use '../settings/colors.scss';
+@use '../settings/spacing.scss';
+@use '../settings/font-weights.scss' as fw;
+@use '../settings/font-sizes.scss' as fz;
+
+
+$base-font-family:            'Roboto';
+$base-font-heading:           'Roboto';
+
+$heading-color:               var(--text-color) !default;
+$heading-font-weight:         fw.$bold !default;
+$heading-line-height:         fz.$h-lh !default;
+
+$base-text-color:             var(--text-color) !default;
+$base-background-color:       var(--bg-page) !default;
+$base-link-color:             var(--link-color) !default;
+
+$base-link-hover-color:       rgba(var(--link-color), 0.5) !default;
+
+$font-size-base:              fz.$size-s !default;
+$line-height-base:            fz.$t-lh !default;
+
+$container-width:             1200px;
+$padding-container:           0 spacing.$m;
+
+$animation-speed:             0.3s;

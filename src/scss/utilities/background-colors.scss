@@ -1,0 +1,9 @@
+@use '../settings/colors';
+
+.bg-color-white {
+  background-color: colors.$white;
+}
+.bg-color-black {
+  background-color: colors.$black;
+}
+
